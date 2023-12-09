@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="font-awesome.css">
+    <link rel="stylesheet" href="index.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Hovering Cards</title>
+</head>
+<body>
+    
+
+    <ul>
+        <li><i class="fa fa-bars fa-lg"></i></li>
+        <li><i class="fa fa-user fa-lg"></i></li>
+        <li><i class="fa fa-plus-circle fa-lg"></i></li>
+        <li><i class="fa fa-cog fa-lg"></i></li>
+        <li><i class="fa fa-comment fa-lg"></i></li>
+        <div class="marker"></div>
+    </ul>
+
+
+    <script>
+
+        const marker = document.querySelector(".marker"),
+        list = document.querySelectorAll("ul li");
+
+        list.forEach(li => li.addEventListener("mouseover", e => {
+            marker.style.left = li.offsetLeft + "px";
+            marker.style.width = li.offsetWidth + "px";
+            document.querySelector(".active").classList.remove("active");
+            li.classList.add("active")
+        }))
+
+
+    </script>
+
+</body>
+</html>
